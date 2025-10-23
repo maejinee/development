@@ -25,7 +25,7 @@ body {
 
 #qr-image {
     aspect-ratio: 1 / 1;
-    background: url(images/image-qr-code.png) center / cover no-repeat;
+    background: url(qr-code-component-main/image/image-qr-code.png) center / cover no-repeat;
     border-radius: 10px; 
     margin: 10px; 
 }
