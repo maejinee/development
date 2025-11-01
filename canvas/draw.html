@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap" rel="stylesheet" rel="stylesheet">
+    <link rel="stylesheet" href="draw.css">
+    <title>draw it</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Draw It!</h1>
+        <canvas id="canvas" width="400" height="400" style="border: solid 1px;"></canvas>
+        <div id="buttons">
+            <input type="color" id="pencolor">
+            <button id="clear">clear</button>
+        </div>
+    </div>
+    
+
+    <script>
+        const canvas = document.getElementById('canvas')
+        
+        const ctx = canvas.getContext('2d')
+
+        
+        let isdrawing = 0, lastX = 0, lastY = 0
+        canvas.addEventListener('mousedown', function(e) {
+            isdrawing = 1
+            lastX = e.offsetX
+            lastY = e.offsetY
+        })
+        canvas.addEventListener('mousemove', function(e) {
+            if (isdrawing) {
+                const pencolor = document.getElementById('pencolor').value
+                ctx.strokeStyle = pencolor
+                ctx.beginPath()
+                ctx.moveTo(lastX, lastY)
+                ctx.lineTo(e.offsetX, e.offsetY)
+                ctx.closePath()
+                ctx.stroke()
+                lastX = e.offsetX
+                lastY = e.offsetY
+            } else {
+                return
+            }
+        })
+        canvas.addEventListener('mouseup', function() {
+            isdrawing = 0 
+        })
+        canvas.addEventListener('mouseout', function() {
+            isdrawing = 0 
+        })
+
+        const clear = document.getElementById('clear')
+        clear.addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+        })
+        
+        
+    </script>
+</body>
+</html>

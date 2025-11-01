@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Momo Signature';
+}
+
+body{
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+
+#container{
+    width: 500px; 
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+#buttons{
+    display: flex;
+    gap: 10px;
+}
+
+input,
+button {
+    width: 50px;
+    border: solid 1px;
+    background-color: rgb(152, 255, 255);
+}
