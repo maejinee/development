@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --Purple100: hsl(254, 88%, 90%);
+    --Purple500: hsl(256, 67%, 59%);
+    --Yellow100: hsl(31, 66%, 93%);
+    --Yellow500: hsl(39, 100%, 71%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: 'DM Sans';
+    background-color: rgb(233, 233, 233); 
+}
+
+#container{
+    min-width: 800px;
+    min-height: 650px;
+    width: 60vw; 
+    height: 85vh;
+    display: grid;
+    gap: 2%;
+    grid-template-columns: repeat(4, 24%);
+    grid-template-rows: repeat(10, 8%);
+}
+
+.box {
+    border-radius: 10px;
+    padding: 10%;
+}
+
+#create {grid-column: 1 / span 1; grid-row: 1/ span 5; background: var(--Yellow100); }
+#write {grid-column: 1 / span 1; grid-row: 6 / span 5; background: var(--Yellow500); }
+#social {grid-column: 2 / span 2; grid-row: 1/ span 4; background: var(--Purple500);}
+#manage {grid-column: 2 / span 1; grid-row: 5 / span 3; background: var(--White);}
+#maintain {grid-column: 3 / span 1; grid-row: 5 / span 3; background: var(--Yellow500);}
+#faster {grid-column: 2 / span 1; grid-row: 8 / span 3; background:var(--White);}
+#schedule {grid-column: 4 / span 1; grid-row: 1 / span 7; background: var(--Purple100);}
+#grow {grid-column: 3 / span 2; grid-row: 8 / span 3; background: var(--Purple500);}
+
+#create {display: flex; flex-direction: column; justify-content: center;}
+#create p{margin-bottom: 20px; font-size: 26px; font-weight: 500; color: black; line-height: 25px;}
+#create span{color: var(--Purple500); font-style: italic;}
+#create img{width: 100%;}
+
+#write {display: flex; flex-direction: column; justify-content: space-between; }
+#write p{margin-top: 0px; font-size: 28px; font-weight: 500; color: black; line-height: 25px;}
+#write img{width: 100%;}
+
+#social {display: flex; flex-direction: column; align-items: center;}
+#social p{margin: 0px; text-align: center; font-size: 40px; font-weight: 500; color: white; line-height: 40px;}
+#social span.first{font-size: 40px; color: var(--Yellow500);}
+#social span.second{font-size: 40px; font-style: italic;}
+#social img{margin-top: 5%; width: 42%;}
+#social span.third{margin-top: 2%; font-size: 13px; font-weight: 400; color: white;}
+
+#manage div {height: 30%; overflow: hidden; margin-bottom: 20px;}
+#manage div img{height: 100%; object-fit: cover; }
+#manage p{margin: 0; font-size: 22px; font-weight: 500; color: black; line-height: 20px;}
+
+#maintain p{margin-top: 0; margin-bottom: 13px; font-size: 22px; font-weight: 500; color: black; line-height: 20px;}
+#maintain div {width: 100%; height: 50%; overflow: hidden;}
+#maintain div img{width:100%; object-fit: cover;}
+
+#faster {display: flex; flex-direction: column; justify-content: space-between;}
+#faster p.first{margin: 0; font-size: 50px; font-weight: 500; color: black; line-height: 40px;}
+#faster p.second{margin: 0; font-size: 14px; font-weight: 400; color: black; line-height: 20px;}
+#faster img{margin: 0; width: 90%;}
+
+#schedule p.first{font-size: 22px; font-weight: 500; color: black; line-height: 20px;}
+#schedule div {height: 200px; overflow: hidden;}
+#schedule img{height: 100%;}
+#schedule p.second{font-size: 13px; font-weight: 400; color: black; line-height: 15px;}
+
+#grow {padding: 25px; display: flex; align-items: center; }
+#grow img {width: 50%; }
+#grow p{margin: 0; font-size: 25px; font-weight: 500; color: white; line-height: 25px;}
+
+
+@media (width < 768px) {
+    #container {
+        min-width: 200px;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+    }; 
+}
